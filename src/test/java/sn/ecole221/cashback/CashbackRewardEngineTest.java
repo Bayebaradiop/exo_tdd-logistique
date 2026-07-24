@@ -14,7 +14,8 @@ class CashbackRewardEngineTest {
                 "USER-001",
                 10_000,
                 LocalDate.of(2026, 3, 10),
-                LocalDate.of(1990, 8, 20)
+                LocalDate.of(1990, 8, 20),
+                false
         );
 
         CashbackRewardEngine engine = new CashbackRewardEngine();
@@ -30,7 +31,8 @@ class CashbackRewardEngineTest {
                 "USER-002",
                 10_000,
                 LocalDate.of(2026, 5, 15),
-                LocalDate.of(1990, 5, 3)
+                LocalDate.of(1990, 5, 3),
+                false
         );
 
         CashbackRewardEngine engine = new CashbackRewardEngine();

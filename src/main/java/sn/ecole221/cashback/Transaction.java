@@ -6,6 +6,7 @@ public record Transaction(
         String userId,
         int amount,
         LocalDate transactionDate,
-        LocalDate birthDate
+        LocalDate birthDate,
+        boolean isForeign
 ) {
 }
