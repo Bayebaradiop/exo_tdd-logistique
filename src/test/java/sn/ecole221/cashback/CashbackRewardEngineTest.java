@@ -10,7 +10,12 @@ class CashbackRewardEngineTest {
 
     @Test
     void shouldReturnOnePercentStandardCashback() {
-        Transaction transaction = new Transaction("USER-001", 10_000);
+        Transaction transaction = new Transaction(
+                "USER-001",
+                10_000,
+                LocalDate.of(2026, 3, 10),
+                LocalDate.of(1990, 8, 20)
+        );
 
         CashbackRewardEngine engine = new CashbackRewardEngine();
 
