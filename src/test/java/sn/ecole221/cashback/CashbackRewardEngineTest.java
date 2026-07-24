@@ -39,4 +39,21 @@ class CashbackRewardEngineTest {
 
         assertEquals(200, cashback);
     }
+
+    @Test
+    void shouldDeductForeignFeeFromCashback() {
+        Transaction transaction = new Transaction(
+                "USER-003",
+                100_000,
+                LocalDate.of(2026, 3, 10),
+                LocalDate.of(1990, 8, 20),
+                true
+        );
+
+        CashbackRewardEngine engine = new CashbackRewardEngine();
+
+        int cashback = engine.calculate(transaction);
+
+        assertEquals(500, cashback);
+    }
 }
