@@ -18,11 +18,11 @@ class CashbackRewardEngineTest {
 
     @Test
     void shouldReturnOnePercentStandardCashback() {
+        Client client = new Client("USER-001", LocalDate.of(1990, 8, 20));
         Transaction transaction = new Transaction(
-                "USER-001",
+                client,
                 10_000,
                 LocalDate.of(2026, 3, 10),
-                LocalDate.of(1990, 8, 20),
                 false,
                 "Standard"
         );
@@ -36,11 +36,11 @@ class CashbackRewardEngineTest {
 
     @Test
     void shouldReturnTwoPercentCashbackDuringBirthdayMonth() {
+        Client client = new Client("USER-002", LocalDate.of(1990, 5, 3));
         Transaction transaction = new Transaction(
-                "USER-002",
+                client,
                 10_000,
                 LocalDate.of(2026, 5, 15),
-                LocalDate.of(1990, 5, 3),
                 false,
                 "Standard"
         );
@@ -54,11 +54,11 @@ class CashbackRewardEngineTest {
 
     @Test
     void shouldDeductForeignFeeFromCashback() {
+        Client client = new Client("USER-003", LocalDate.of(1990, 8, 20));
         Transaction transaction = new Transaction(
-                "USER-003",
+                client,
                 100_000,
                 LocalDate.of(2026, 3, 10),
-                LocalDate.of(1990, 8, 20),
                 true,
                 "Standard"
         );
@@ -72,11 +72,11 @@ class CashbackRewardEngineTest {
 
     @Test
     void shouldNeverReturnNegativeCashbackWhenForeignFeeExceedsCashback() {
+        Client client = new Client("USER-004", LocalDate.of(1990, 8, 20));
         Transaction transaction = new Transaction(
-                "USER-004",
+                client,
                 10_000,
                 LocalDate.of(2026, 3, 10),
-                LocalDate.of(1990, 8, 20),
                 true,
                 "Standard"
         );
@@ -90,11 +90,11 @@ class CashbackRewardEngineTest {
 
     @Test
     void shouldCapSupermarketCashbackAtOneThousandEvenDuringBirthdayMonth() {
+        Client client = new Client("USER-005", LocalDate.of(1990, 5, 3));
         Transaction transaction = new Transaction(
-                "USER-005",
+                client,
                 100_000,
                 LocalDate.of(2026, 5, 15),
-                LocalDate.of(1990, 5, 3),
                 false,
                 "Supermarché"
         );
@@ -108,11 +108,11 @@ class CashbackRewardEngineTest {
 
     @Test
     void shouldCapCashbackByRemainingMonthlyLimit() {
+        Client client = new Client("USER-006", LocalDate.of(1990, 8, 20));
         Transaction transaction = new Transaction(
-                "USER-006",
+                client,
                 50_000,
                 LocalDate.of(2026, 3, 10),
-                LocalDate.of(1990, 8, 20),
                 false,
                 "Standard"
         );

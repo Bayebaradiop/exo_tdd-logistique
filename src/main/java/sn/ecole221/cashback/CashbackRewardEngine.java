@@ -31,14 +31,14 @@ public class CashbackRewardEngine {
         }
 
         int remainingMonthlyRoom = MONTHLY_CASHBACK_CAP
-                - monthlyLimitPort.accumulatedCashbackThisMonth(transaction.userId());
+                - monthlyLimitPort.accumulatedCashbackThisMonth(transaction.client().userId());
         cashback = Math.max(0, Math.min(cashback, remainingMonthlyRoom));
 
         return cashback;
     }
 
     private boolean isBirthdayMonth(Transaction transaction) {
-        return transaction.transactionDate().getMonth() == transaction.birthDate().getMonth();
+        return transaction.transactionDate().getMonth() == transaction.client().birthDate().getMonth();
     }
 
     private boolean isSupermarket(Transaction transaction) {
