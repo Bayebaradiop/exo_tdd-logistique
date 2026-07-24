@@ -27,7 +27,7 @@ class CashbackRewardEngineTest {
                 "Standard"
         );
 
-        CashbackRewardEngine engine = new CashbackRewardEngine();
+        CashbackRewardEngine engine = new CashbackRewardEngine(monthlyLimitPort);
 
         int cashback = engine.calculate(transaction);
 
@@ -45,7 +45,7 @@ class CashbackRewardEngineTest {
                 "Standard"
         );
 
-        CashbackRewardEngine engine = new CashbackRewardEngine();
+        CashbackRewardEngine engine = new CashbackRewardEngine(monthlyLimitPort);
 
         int cashback = engine.calculate(transaction);
 
@@ -63,7 +63,7 @@ class CashbackRewardEngineTest {
                 "Standard"
         );
 
-        CashbackRewardEngine engine = new CashbackRewardEngine();
+        CashbackRewardEngine engine = new CashbackRewardEngine(monthlyLimitPort);
 
         int cashback = engine.calculate(transaction);
 
@@ -81,7 +81,7 @@ class CashbackRewardEngineTest {
                 "Standard"
         );
 
-        CashbackRewardEngine engine = new CashbackRewardEngine();
+        CashbackRewardEngine engine = new CashbackRewardEngine(monthlyLimitPort);
 
         int cashback = engine.calculate(transaction);
 
@@ -99,7 +99,7 @@ class CashbackRewardEngineTest {
                 "Supermarché"
         );
 
-        CashbackRewardEngine engine = new CashbackRewardEngine();
+        CashbackRewardEngine engine = new CashbackRewardEngine(monthlyLimitPort);
 
         int cashback = engine.calculate(transaction);
 

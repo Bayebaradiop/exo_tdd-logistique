@@ -6,7 +6,14 @@ public class CashbackRewardEngine {
     private static final int BIRTHDAY_CASHBACK_RATE_PERCENT = 2;
     private static final int FOREIGN_TRANSACTION_FEE = 500;
     private static final int SUPERMARKET_CASHBACK_CAP = 1000;
+    private static final int MONTHLY_CASHBACK_CAP = 10_000;
     private static final String SUPERMARKET_CATEGORY = "Supermarché";
+
+    private final MonthlyLimitPort monthlyLimitPort;
+
+    public CashbackRewardEngine(MonthlyLimitPort monthlyLimitPort) {
+        this.monthlyLimitPort = monthlyLimitPort;
+    }
 
     public int calculate(Transaction transaction) {
         int ratePercent = isBirthdayMonth(transaction)
@@ -22,6 +29,10 @@ public class CashbackRewardEngine {
         if (transaction.isForeign()) {
             cashback = Math.max(0, cashback - FOREIGN_TRANSACTION_FEE);
         }
+
+        int remainingMonthlyRoom = MONTHLY_CASHBACK_CAP
+                - monthlyLimitPort.accumulatedCashbackThisMonth(transaction.userId());
+        cashback = Math.max(0, Math.min(cashback, remainingMonthlyRoom));
 
         return cashback;
     }
