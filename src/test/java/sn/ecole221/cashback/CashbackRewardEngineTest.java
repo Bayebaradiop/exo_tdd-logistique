@@ -75,4 +75,22 @@ class CashbackRewardEngineTest {
 
         assertEquals(0, cashback);
     }
+
+    @Test
+    void shouldCapSupermarketCashbackAtOneThousandEvenDuringBirthdayMonth() {
+        Transaction transaction = new Transaction(
+                "USER-005",
+                100_000,
+                LocalDate.of(2026, 5, 15),
+                LocalDate.of(1990, 5, 3),
+                false,
+                "Supermarché"
+        );
+
+        CashbackRewardEngine engine = new CashbackRewardEngine();
+
+        int cashback = engine.calculate(transaction);
+
+        assertEquals(1000, cashback);
+    }
 }
