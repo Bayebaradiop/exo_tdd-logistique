@@ -7,7 +7,6 @@ public class CashbackRewardEngine {
     private static final int FOREIGN_TRANSACTION_FEE = 500;
     private static final int SUPERMARKET_CASHBACK_CAP = 1000;
     private static final int MONTHLY_CASHBACK_CAP = 10_000;
-    private static final String SUPERMARKET_CATEGORY = "Supermarché";
 
     private final MonthlyLimitPort monthlyLimitPort;
 
@@ -42,6 +41,6 @@ public class CashbackRewardEngine {
     }
 
     private boolean isSupermarket(Transaction transaction) {
-        return SUPERMARKET_CATEGORY.equals(transaction.category());
+        return transaction.category() == Category.SUPERMARKET;
     }
 }

@@ -24,7 +24,7 @@ class CashbackRewardEngineTest {
                 10_000,
                 LocalDate.of(2026, 3, 10),
                 false,
-                "Standard"
+                Category.STANDARD
         );
 
         CashbackRewardEngine engine = new CashbackRewardEngine(monthlyLimitPort);
@@ -42,7 +42,7 @@ class CashbackRewardEngineTest {
                 10_000,
                 LocalDate.of(2026, 5, 15),
                 false,
-                "Standard"
+                Category.STANDARD
         );
 
         CashbackRewardEngine engine = new CashbackRewardEngine(monthlyLimitPort);
@@ -60,7 +60,7 @@ class CashbackRewardEngineTest {
                 100_000,
                 LocalDate.of(2026, 3, 10),
                 true,
-                "Standard"
+                Category.STANDARD
         );
 
         CashbackRewardEngine engine = new CashbackRewardEngine(monthlyLimitPort);
@@ -78,7 +78,7 @@ class CashbackRewardEngineTest {
                 10_000,
                 LocalDate.of(2026, 3, 10),
                 true,
-                "Standard"
+                Category.STANDARD
         );
 
         CashbackRewardEngine engine = new CashbackRewardEngine(monthlyLimitPort);
@@ -96,7 +96,7 @@ class CashbackRewardEngineTest {
                 100_000,
                 LocalDate.of(2026, 5, 15),
                 false,
-                "Supermarché"
+                Category.SUPERMARKET
         );
 
         CashbackRewardEngine engine = new CashbackRewardEngine(monthlyLimitPort);
@@ -114,7 +114,7 @@ class CashbackRewardEngineTest {
                 50_000,
                 LocalDate.of(2026, 3, 10),
                 false,
-                "Standard"
+                Category.STANDARD
         );
         when(monthlyLimitPort.accumulatedCashbackThisMonth("USER-006")).thenReturn(9_800);
 
