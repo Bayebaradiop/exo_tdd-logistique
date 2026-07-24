@@ -7,6 +7,7 @@ public record Transaction(
         int amount,
         LocalDate transactionDate,
         LocalDate birthDate,
-        boolean isForeign
+        boolean isForeign,
+        String category
 ) {
 }

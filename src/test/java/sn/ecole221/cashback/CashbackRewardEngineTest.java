@@ -15,7 +15,8 @@ class CashbackRewardEngineTest {
                 10_000,
                 LocalDate.of(2026, 3, 10),
                 LocalDate.of(1990, 8, 20),
-                false
+                false,
+                "Standard"
         );
 
         CashbackRewardEngine engine = new CashbackRewardEngine();
@@ -32,7 +33,8 @@ class CashbackRewardEngineTest {
                 10_000,
                 LocalDate.of(2026, 5, 15),
                 LocalDate.of(1990, 5, 3),
-                false
+                false,
+                "Standard"
         );
 
         CashbackRewardEngine engine = new CashbackRewardEngine();
@@ -49,7 +51,8 @@ class CashbackRewardEngineTest {
                 100_000,
                 LocalDate.of(2026, 3, 10),
                 LocalDate.of(1990, 8, 20),
-                true
+                true,
+                "Standard"
         );
 
         CashbackRewardEngine engine = new CashbackRewardEngine();
@@ -66,7 +69,8 @@ class CashbackRewardEngineTest {
                 10_000,
                 LocalDate.of(2026, 3, 10),
                 LocalDate.of(1990, 8, 20),
-                true
+                true,
+                "Standard"
         );
 
         CashbackRewardEngine engine = new CashbackRewardEngine();
