@@ -14,7 +14,7 @@ public class CashbackRewardEngine {
         int cashback = transaction.amount() * ratePercent / 100;
 
         if (transaction.isForeign()) {
-            cashback = cashback - FOREIGN_TRANSACTION_FEE;
+            cashback = Math.max(0, cashback - FOREIGN_TRANSACTION_FEE);
         }
 
         return cashback;
